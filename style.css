@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(240, 205, 11);
+}
+div{
+    margin: auto auto;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;
+}
+#title{
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+#canvas{
+    width: 900px;
+    height: 400px;
+    background-color: #eee;
+}
+button{
+    font-family: monospace;
+    font-size: xx-large;
+    background-color: transparent;    
+}
