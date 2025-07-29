@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(240, 205, 11);
+    background-color: #f0cd0b;
 }
 div{
     margin: auto auto;
@@ -12,9 +12,10 @@ div{
     letter-spacing: 2px;
 }
 #canvas{
-    width: 900px;
-    height: 400px;
+    width: 60%;
+    /* height: 30%;     */
     background-color: #eee;
+    border: 3px solid black;
 }
 button{
     font-family: monospace;

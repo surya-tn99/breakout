@@ -16,10 +16,11 @@ function eraseWholeCanvas(){
 function drawBall(){
 
     eraseWholeCanvas();
+    drawBoard(); // defined on below
 
     ctx.beginPath();
     ctx.arc(x,y,radius,0,Math.PI*2);
-    ctx.fillStyle = "blue";
+    ctx.fillStyle = "#ffd900ff";
     ctx.fill();
     ctx.closePath();
 
@@ -38,8 +39,39 @@ function drawBall(){
     y += dy; 
 
 }
+// Board used to user to play
+let boardX = canvas.width/2;
+const boardWidth = 25;
+function drawBoard(){
+    ctx.beginPath();
+    ctx.rect(boardX, canvas.height-5, boardWidth  , 5   );
+    ctx.fillStyle = "#ffd900ff";
+    ctx.fill();
+    // ctx.strokeStyle = "#000000ff";
+    // ctx.stroke();   
+    ctx.closePath();
+}
+
+function moveBoardLeft(){
+    boardX = Math.max(0 ,boardX-7 )
+}
+function moveBoardRight(){
+    boardX = Math.min(canvas.width - boardWidth , boardX+7);
+}
+
+function keyPress(e){
+    console.log(e.key);
+    if(e.key == "ArrowDown" || e.key == "ArrowRight"){
+        moveBoardRight();
+    } 
+    else if(e.key == "ArrowUp" || e.key == "ArrowLeft"){
+        moveBoardLeft();
+    }
+}
+
+document.addEventListener("keydown",keyPress);
+document.addEventListener("keyup",keyPress);
 
 function start(){
     setInterval(drawBall, 10);
 }
-
